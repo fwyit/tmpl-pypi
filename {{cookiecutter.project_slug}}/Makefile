@@ -94,3 +94,15 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+name = $(shell basename `pwd`)
+docker:
+	@docker build -t fwyit/{{cookiecutter.project_slug}}:base -f Dockerfile.base .
+	docker build -t fwyit/{{cookiecutter.project_slug}} .
+
+sh:
+	docker-compose up --build -d
+	@id="$(name)" && \
+	echo "当前启动ID: $$id" && \
+	docker exec -it $$id sh && \
+	docker stop $$id

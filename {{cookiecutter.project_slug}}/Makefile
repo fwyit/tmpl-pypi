@@ -106,3 +106,14 @@ sh:
 	echo "当前启动ID: $$id" && \
 	docker exec -it $$id sh && \
 	docker stop $$id
+
+app ?= pypi
+cc = ~/.cookiecutters/$(app)/
+ini:
+	test -e .git || ( git init && git add .gitignore && git commit -m 'ini 初始化项目$(name)' && \
+		git add . && git commit -am 'add 自动生成初始项目')
+re: ini
+	@test "$(app)" || ( echo "请输入需要处理的项目类型 a" && exit 1 )
+	@test -e .cc.json || echo "未找到当前配置文件 .cc.json 需要强制覆盖"
+	@cp .cc.json $(cc)/cookiecutter.json && \
+		cd .. && cookiecutter -f $(app) && cd $(cc) && git checkout ./cookiecutter.json

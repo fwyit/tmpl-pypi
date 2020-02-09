@@ -1,10 +1,10 @@
 {
-  "full_name": "请输入项目名字",
-  "email": "ops@doat.cc",
+  "full_name": "pypi依赖包组建",
+  "email": "pypi@fwyit.com",
   "github_username": "fwyit",
-  "project_name": "项目名称",
+  "project_name": "pypi",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "project_short_description": "项目描述",
+  "project_short_description": "允许命令行启动的依赖组建",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.1.0",
   "use_pytest": "y",
@@ -12,5 +12,5 @@
   "add_pyup_badge": "n",
   "command_line_interface": ["Argparse", "Click", "No command-line interface"],
   "create_author_file": "y",
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+  "open_source_license": ["Not open source", "MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3"]
 }

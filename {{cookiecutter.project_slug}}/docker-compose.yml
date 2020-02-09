@@ -1,0 +1,13 @@
+version: '3'
+services:
+  {{cookiecutter.project_slug}}:
+    build: .
+    image: fwyit/{{cookiecutter.project_slug}}
+    container_name: {{cookiecutter.project_slug}}
+    environment:
+      - ENV=test
+    volumes:
+      - ./:/app
+    # ports:
+    #   - "80:80"
+    command: tail -f /etc/hosts

@@ -1,0 +1,18 @@
+FROM    fwyit/python:3
+
+RUN     apk update && \
+        apk add --no-cache \
+            libffi \
+            openssl \
+            && \
+        apk add --no-cache -t .deps \
+            build-base \
+            gcc \ 
+            libffi-dev \
+            openssl-dev \
+            && \
+        python3 setup.py test && \
+        apk del .deps && \
+        rm -rf /tmp/* /var/cache/apk/*
+
+WORKDIR /app

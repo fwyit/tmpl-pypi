@@ -1,15 +1,11 @@
-* {{ cookiecutter.project_name }} version:
-* Python version:
-* Operating System:
+## 运行环境
+* {{ cookiecutter.project_slug }}版本:
+* Python版本:
+* 操作系统:
 
-### Description
+## 问题描述
 
-Describe what you were trying to get done.
-Tell us what happened, what went wrong, and what you expected to happen.
+* 请详细描述您准备做的事项(如命令，调用文件名等)。
 
-### What I Did
+* 请告知发生什么错误，并提交错误日志。
 
-```
-Paste the command(s) you ran and the output.
-If there was a crash, please include the traceback here.
-```
